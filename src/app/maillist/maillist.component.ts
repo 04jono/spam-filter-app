@@ -16,6 +16,7 @@ export class MaillistComponent implements OnInit {
   mailwidth = window.innerWidth - this.sidebar_margin;
   messagewidth = this.mailwidth - this.timestamp_margin;
 
+  messageList = [{subject: "", body: ""}];
   
   constructor(private service : HttpService){
 
@@ -38,7 +39,7 @@ export class MaillistComponent implements OnInit {
 
   getMessages(){
     this.service.getData().subscribe((response) => {
-      console.log("Response", response);
+      this.messageList = JSON.parse(JSON.stringify(response));
     }, (error) => {
       console.log(error);
     });

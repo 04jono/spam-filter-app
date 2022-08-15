@@ -1,12 +1,12 @@
 <!-- List of Emails -->
 
 <div class="maillist">
-    <div class="mailrow" [style.width.px]="mailwidth">
+    <div class="mailrow" [style.width.px]="mailwidth" *ngFor='let item of messageList'>
         <div class = "mailrow_message" [style.width.px]="messagewidth">
             <h3> Sender </h3>
             <h4>
-                Subject
-                <span> - Description </span>
+                {{item.subject}}
+                <span> - {{item.body}} </span>
             </h4>
         </div>
         <p> 8:00</p>

@@ -2,3 +2,7 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+
+#Credentials
+credentials.json
+token.json
